@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:get/get.dart';
 import 'package:video_player_app/models/video_player_model.dart';
 import 'package:video_player_app/services/network_caller.dart';
@@ -19,13 +21,13 @@ class FetchDataController extends GetxController{
      super.onInit();
    }
 
-
-
-
   Future<bool>getData() async{
     _isLoading = true;
     update();
     NetworkResponse response = await NetworkCaller.getRequest(Urls.trendingVideo);
+
+    log("statusCode ==> ${response.statusCode}");
+    log("body ==> ${response.body}");
 
     _isLoading = false;
     if(response.isSuccess){
