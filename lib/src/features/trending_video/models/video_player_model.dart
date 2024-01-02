@@ -9,7 +9,8 @@ class VideoPlayerModel {
       {this.links, this.total, this.page, this.pageSize, this.results});
 
   VideoPlayerModel.fromJson(Map<String, dynamic> json) {
-    links = json['links'] != null ? new Links.fromJson(json['links']) : null;
+    // links = json['links'] != null ? new Links.fromJson(json['links']) : null;
+    links = json['links'] != null ? Links.fromJson(json['links']) : null;
     total = json['total'];
     page = json['page'];
     pageSize = json['page_size'];
@@ -36,9 +37,28 @@ class VideoPlayerModel {
   }
 }
 
+// class Links {
+//   int? next;
+//   Null? previous;
+//
+//   Links({this.next, this.previous});
+//
+//   Links.fromJson(Map<String, dynamic> json) {
+//     next = json['next'];
+//     previous = json['previous'];
+//   }
+//
+//   Map<String, dynamic> toJson() {
+//     final Map<String, dynamic> data = new Map<String, dynamic>();
+//     data['next'] = this.next;
+//     data['previous'] = this.previous;
+//     return data;
+//   }
+// }
+
 class Links {
   int? next;
-  Null? previous;
+  dynamic previous; // Use dynamic type to allow null or int
 
   Links({this.next, this.previous});
 
@@ -54,6 +74,7 @@ class Links {
     return data;
   }
 }
+
 
 class Results {
   String? thumbnail;
@@ -105,7 +126,7 @@ class Results {
     thumbnail = json['thumbnail'];
     id = json['id'];
     title = json['title'];
-    dateAndTime = json['date_and_time'];
+    dateAndTime = json['date_and_time']?.toString();
     slug = json['slug'];
     createdAt = json['created_at'];
     manifest = json['manifest'];

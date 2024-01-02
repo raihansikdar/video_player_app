@@ -94,7 +94,7 @@ class VideoPlayingPage extends StatelessWidget {
                       children: [
                         Container(
                           width: 50.rw,
-                          height: 60.rh,
+                          height: 50.rh,
                           decoration: ShapeDecoration(
                             image: DecorationImage(
                               image: NetworkImage(_fetchDataController.videoPlayerModel.results?.first.channelImage ?? ''),

@@ -42,14 +42,6 @@ class _VideoPlayerCardState extends State<VideoPlayerCard> {
     return Card(
       borderOnForeground: true,
       elevation: 0,
-      // color: Colors.white,
-      // shape: const RoundedRectangleBorder(
-      //   side: BorderSide(
-      //     color: Colors.white,
-      //     width: 1,
-      //   ),
-      //   borderRadius: BorderRadius.zero,
-      // ),
       margin: EdgeInsets.zero,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
