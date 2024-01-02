@@ -168,7 +168,7 @@ class VideoPlayingPage extends StatelessWidget {
                   ),
               
                   Padding(
-                    padding:  EdgeInsets.only(left: 16.rSp,right: 16.rSp),
+                    padding:  EdgeInsets.only(left: 16.rSp,right: 16.rSp,bottom: 16.rSp),
                     child: TextFormField(
                       decoration:  InputDecoration(
                         suffixIcon: GestureDetector(
