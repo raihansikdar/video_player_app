@@ -1,7 +1,7 @@
 # video_player_app
 
 ### Google Drive Link:
-- [Download Todo App](https://drive.google.com/file/d/1c7nIFajfQlz-7BGmeXy-IU_ONBL6xojT/view?usp=sharing)
+- [Download Video Player App](https://drive.google.com/file/d/1ZNXJemD_PVXl77iBWXEc8xEAZ5gzZpox/view?usp=sharing)
 
 
 ## Key Responsibilities
