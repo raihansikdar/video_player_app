@@ -75,11 +75,12 @@ class VideoThumbnailCard extends StatelessWidget {
               child: Row(
                 children: [
                   Container(
-                    width: 40.rw,
-                    height: 40.rh,
+                    width: 50.rw,
+                    height: 60.rh,
                     decoration: ShapeDecoration(
                       image: DecorationImage(
                         image: NetworkImage(resultData.channelImage ?? ''),
+                        fit: BoxFit.cover,
                       ),
                       shape: const OvalBorder(),
                     ),
@@ -111,7 +112,7 @@ class VideoThumbnailCard extends StatelessWidget {
             ),
             Padding(
               padding: EdgeInsets.only(
-                  left: 76.rSp, top: 6.rSp, bottom: 26.rSp, right: 16.rSp),
+                  left: 76.rSp, bottom: 26.rSp, right: 16.rSp),
               child: Row(
                 children: [
                   Text(

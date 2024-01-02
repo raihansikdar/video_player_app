@@ -51,6 +51,7 @@ class _VideoThumbnailCardState extends State<VideoThumbnailCard> {
       // ),
       margin: EdgeInsets.zero,
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Stack(
             children: [
@@ -91,9 +92,9 @@ class _VideoThumbnailCardState extends State<VideoThumbnailCard> {
           Padding(
             padding: EdgeInsets.all(16.rSp),
             child: Text(
-              /* 'আরব নেতাদের যে ভুলে ফি*লি*স্তি*নের এই দুর্দাশা | আবু ত্বহা মুহাম্মদ আদনান',*/
               widget.resultData.title ?? '',
               maxLines: 4,
+              textAlign: TextAlign.start,
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
                 color: const Color(0xFF1A202C),
@@ -105,8 +106,7 @@ class _VideoThumbnailCardState extends State<VideoThumbnailCard> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.all(
-               16.rSp),
+            padding: EdgeInsets.all(16.rSp),
             child: Row(
               children: [
                 Text(
