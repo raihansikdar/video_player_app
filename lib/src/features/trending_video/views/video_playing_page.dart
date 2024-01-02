@@ -105,29 +105,27 @@ class VideoPlayingPage extends StatelessWidget {
                         SizedBox(
                           width: 10.rw,
                         ),
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              TextComponent(
-                                text: _fetchDataController.videoPlayerModel.results?.first.channelName ?? '',
-                                color: AppColors.appTitleColor,
-                                fontSize: 15.rSp,
-                                fontFamily: 'Hind Siliguri',
-                                fontWeight: FontWeight.w600,
-                                height: 1,
-                              ),
-                              SizedBox(height: 4.rSp,),
-                              TextComponent(
-                                text: "${_fetchDataController.videoPlayerModel.results?.first.channelSubscriber ?? ''} Subscribers",
-                                color: AppColors.subTitleColor,
-                                fontSize: 13.rSp,
-                                fontFamily: 'Poppins',
-                                fontWeight: FontWeight.w400,
-                                height: 1,
-                              ),
-                            ],
-                          )
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            TextComponent(
+                              text: _fetchDataController.videoPlayerModel.results?.first.channelName ?? '',
+                              color: AppColors.appTitleColor,
+                              fontSize: 15.rSp,
+                              fontFamily: 'Hind Siliguri',
+                              fontWeight: FontWeight.w600,
+                              height: 1,
+                            ),
+                            SizedBox(height: 4.rSp,),
+                            TextComponent(
+                              text: "${_fetchDataController.videoPlayerModel.results?.first.channelSubscriber ?? ''} Subscribers",
+                              color: AppColors.subTitleColor,
+                              fontSize: 13.rSp,
+                              fontFamily: 'Poppins',
+                              fontWeight: FontWeight.w400,
+                              height: 1,
+                            ),
+                          ],
                         ),
                         const Spacer(),
                       ElevatedButton(
@@ -183,7 +181,7 @@ class VideoPlayingPage extends StatelessWidget {
                     child: Row(
                       children: [
                         Container(
-                          width: 40.rw,
+                          width: 50.rw,
                           height: 50.rh,
                           decoration: const ShapeDecoration(
                             image: DecorationImage(
@@ -209,16 +207,16 @@ class VideoPlayingPage extends StatelessWidget {
                                     fontSize: 15.rSp,
                                     fontFamily: 'Hind Siliguri',
                                     fontWeight: FontWeight.w600,
-                                    height: 1,
+                                     height: 1,
                                   ),
                                   SizedBox(width: 10.rw,),
-                                  const TextComponent(
+                                   TextComponent(
                                     text: "2 days ago",
                                     color: AppColors.subTitleColor,
-                                    fontSize: 8,
+                                    fontSize: 12.rSp,
                                     fontFamily: 'Poppins',
                                     fontWeight: FontWeight.w400,
-                                    height: 1,
+                                     height: 1.3,
                                   ),
                                 ],
                               ),
