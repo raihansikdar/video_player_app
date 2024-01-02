@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:video_player_app/models/video_player_model.dart';
-import 'package:video_player_app/utility/custom_size_extension.dart';
-import 'package:video_player_app/views/video_playing_page.dart';
+import 'package:video_player_app/src/features/trending_video/models/video_player_model.dart';
+import 'package:video_player_app/src/features/trending_video/views/video_playing_page.dart';
+import 'package:video_player_app/src/utility/app_colors.dart';
+import 'package:video_player_app/src/utility/custom_size_extension.dart';
+import 'package:video_player_app/src/utility/text_component.dart';
+
 
 class VideoThumbnailCard extends StatelessWidget {
   const VideoThumbnailCard({
@@ -21,7 +24,7 @@ class VideoThumbnailCard extends StatelessWidget {
       child: Card(
         borderOnForeground: true,
         elevation: 1,
-        color: Colors.white,
+        color: AppColors.whiteColor,
         shape: const RoundedRectangleBorder(
           side: BorderSide(
             color: Colors.white,
@@ -55,23 +58,19 @@ class VideoThumbnailCard extends StatelessWidget {
                           color: Colors.black,
                           borderRadius: BorderRadius.circular(5.rSp)),
                       child: Center(
-                        child: Text(
-                          resultData.duration ?? '',
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 12,
-                            fontFamily: 'Inter',
-                            fontWeight: FontWeight.w500,
-                            height: 0.12,
-                            letterSpacing: -0.24,
-                          ),
-                        ),
+                        child: TextComponent(
+                            text: resultData.duration ?? '',
+                          color: AppColors.whiteColor,
+                          fontSize: 14.rSp,
+                          fontFamily: 'Hind Siliguri',
+                          fontWeight: FontWeight.w500,
+                        )
                       ),
                     ))
               ],
             ),
             Padding(
-              padding: EdgeInsets.all(16.rSp),
+              padding: EdgeInsets.only(left: 16.rSp,right: 16.rSp,top: 16.rSp,bottom: 8.rSp),
               child: Row(
                 children: [
                   Container(
@@ -89,18 +88,13 @@ class VideoThumbnailCard extends StatelessWidget {
                     width: 10.rw,
                   ),
                   Expanded(
-                    child: Text(
-                      /* 'আরব নেতাদের যে ভুলে ফি*লি*স্তি*নের এই দুর্দাশা | আবু ত্বহা মুহাম্মদ আদনান',*/
-                      resultData.title ?? '',
-                      maxLines: 4,
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
-                        color: const Color(0xFF1A202C),
-                        fontSize: 15.rSp,
-                        fontFamily: 'Hind Siliguri',
-                        fontWeight: FontWeight.w600,
-                        height: 1,
-                      ),
+                    child: TextComponent(
+                     text: resultData.title ?? '',
+                      color: AppColors.appTitleColor,
+                      fontSize: 16.rSp,
+                      fontFamily: 'Hind Siliguri',
+                      fontWeight: FontWeight.w600,
+                      height: 1.2,
                     ),
                   ),
                   SizedBox(
@@ -112,30 +106,22 @@ class VideoThumbnailCard extends StatelessWidget {
             ),
             Padding(
               padding: EdgeInsets.only(
-                  left: 76.rSp, bottom: 26.rSp, right: 16.rSp),
+                  left: 86.rSp, bottom: 26.rSp, right: 16.rSp),
               child: Row(
                 children: [
-                  Text(
-                    "${resultData.viewers ?? '0'} views   .   ",
-                    style: const TextStyle(
-                      color: Color(0xFF718096),
-                      fontSize: 13,
-                      fontFamily: 'Inter',
-                      fontWeight: FontWeight.w400,
-                      height: 0.11,
-                      letterSpacing: -0.26,
-                    ),
+                  TextComponent(
+                    text: "${resultData.viewers ?? '0'} views   .   ",
+                    color: AppColors.subTitleColor,
+                    fontSize: 15.rSp,
+                    fontFamily: 'Hind Siliguri',
+                    fontWeight: FontWeight.w400,
                   ),
-                  Text(
-                    resultData.dateAndTime ?? '',
-                    style: const TextStyle(
-                      color: Color(0xFF718096),
-                      fontSize: 13,
-                      fontFamily: 'Inter',
-                      fontWeight: FontWeight.w400,
-                      height: 0.11,
-                      letterSpacing: -0.26,
-                    ),
+                  TextComponent(
+                    text: resultData.dateAndTime ?? '',
+                    color: AppColors.subTitleColor,
+                    fontSize: 15.rSp,
+                    fontFamily: 'Hind Siliguri',
+                    fontWeight: FontWeight.w400,
                   ),
                 ],
               ),

@@ -1,10 +1,10 @@
 import 'dart:developer';
 
 import 'package:get/get.dart';
-import 'package:video_player_app/models/video_player_model.dart';
-import 'package:video_player_app/services/network_caller.dart';
-import 'package:video_player_app/services/network_response.dart';
-import 'package:video_player_app/utility/urls.dart';
+import 'package:video_player_app/src/features/trending_video/models/video_player_model.dart';
+import 'package:video_player_app/src/services/network_caller.dart';
+import 'package:video_player_app/src/services/network_response.dart';
+import 'package:video_player_app/src/utility/api_url/urls.dart';
 
 class FetchDataController extends GetxController{
   bool _isLoading = false;

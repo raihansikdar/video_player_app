@@ -2,7 +2,8 @@ import 'dart:convert';
 import 'dart:developer';
 
 import 'package:http/http.dart';
-import 'package:video_player_app/services/network_response.dart';
+import 'package:video_player_app/src/services/network_response.dart';
+
 
 class NetworkCaller{
   ///----------------------------------->> get request method <<----------------------------------

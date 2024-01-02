@@ -1,12 +1,13 @@
 import 'package:flick_video_player/flick_video_player.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
-import 'package:video_player_app/models/video_player_model.dart';
-import 'package:video_player_app/utility/custom_size_extension.dart';
+import 'package:video_player_app/src/features/trending_video/models/video_player_model.dart';
+import 'package:video_player_app/src/utility/custom_size_extension.dart';
 
 
-class VideoThumbnailCard extends StatefulWidget {
-  const VideoThumbnailCard({
+
+class VideoPlayerCard extends StatefulWidget {
+  const VideoPlayerCard({
     super.key,
     required this.resultData,
   });
@@ -14,10 +15,10 @@ class VideoThumbnailCard extends StatefulWidget {
   final Results resultData;
 
   @override
-  State<VideoThumbnailCard> createState() => _VideoThumbnailCardState();
+  State<VideoPlayerCard> createState() => _VideoPlayerCardState();
 }
 
-class _VideoThumbnailCardState extends State<VideoThumbnailCard> {
+class _VideoPlayerCardState extends State<VideoPlayerCard> {
   late FlickManager flickManager;
 
   @override
@@ -89,51 +90,6 @@ class _VideoThumbnailCardState extends State<VideoThumbnailCard> {
               ),
             ],
           ),
-          Padding(
-            padding: EdgeInsets.all(16.rSp),
-            child: Text(
-              widget.resultData.title ?? '',
-              maxLines: 4,
-              textAlign: TextAlign.start,
-              overflow: TextOverflow.ellipsis,
-              style: TextStyle(
-                color: const Color(0xFF1A202C),
-                fontSize: 15.rSp,
-                fontFamily: 'Hind Siliguri',
-                fontWeight: FontWeight.w600,
-                height: 1,
-              ),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.all(16.rSp),
-            child: Row(
-              children: [
-                Text(
-                  "${widget.resultData.viewers ?? '0'} views   .   ",
-                  style: const TextStyle(
-                    color: Color(0xFF718096),
-                    fontSize: 13,
-                    fontFamily: 'Inter',
-                    fontWeight: FontWeight.w400,
-                    height: 0.11,
-                    letterSpacing: -0.26,
-                  ),
-                ),
-                Text(
-                  widget.resultData.dateAndTime ?? '',
-                  style: const TextStyle(
-                    color: Color(0xFF718096),
-                    fontSize: 13,
-                    fontFamily: 'Inter',
-                    fontWeight: FontWeight.w400,
-                    height: 0.11,
-                    letterSpacing: -0.26,
-                  ),
-                ),
-              ],
-            ),
-          )
         ],
       ),
     );
