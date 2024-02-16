@@ -2,6 +2,8 @@ import 'dart:convert';
 import 'dart:developer';
 
 import 'package:get/get.dart';
+import 'package:html/parser.dart';
+import 'package:html_unescape/html_unescape.dart';
 import 'package:video_player_app/src/features/trending_video/models/video_player_model.dart';
 import 'package:video_player_app/src/services/network_caller.dart';
 import 'package:video_player_app/src/services/network_response.dart';
@@ -25,7 +27,7 @@ class FetchDataController extends GetxController {
   }
 
   Future<bool> getData() async {
-    if (_isLoading) return false;
+   // if (_isLoading) return false;
 
     _isLoading = true;
     update();
@@ -37,9 +39,6 @@ class FetchDataController extends GetxController {
 
     if (response.isSuccess) {
       VideoPlayerModel newModel = VideoPlayerModel.fromJson(response.body);
-
-      log("Response status code: ${response.statusCode}");
-      log(jsonEncode(response.body));
 
       if (newModel.results != null) {
         if (_videoPlayerModel.results == null) {

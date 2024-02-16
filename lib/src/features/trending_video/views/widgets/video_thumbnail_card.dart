@@ -1,5 +1,9 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:html/parser.dart';
+import 'package:html_unescape/html_unescape.dart';
 import 'package:video_player_app/src/features/trending_video/models/video_player_model.dart';
 import 'package:video_player_app/src/features/trending_video/views/video_playing_page.dart';
 import 'package:video_player_app/src/utility/app_colors.dart';
@@ -89,7 +93,7 @@ class VideoThumbnailCard extends StatelessWidget {
                   ),
                   Expanded(
                     child: TextComponent(
-                     text: resultData.title ?? '',
+                     text: convertText(data: resultData.title ?? ''),
                       color: AppColors.appTitleColor,
                       fontSize: 16.rSp,
                       fontFamily: 'Hind Siliguri',
@@ -130,5 +134,11 @@ class VideoThumbnailCard extends StatelessWidget {
         ),
       ),
     );
+  }
+  dynamic convertText({required var data}){
+    var unescape = HtmlUnescape();
+    var document = parse(utf8.decode(data.codeUnits));
+    String parsedString = unescape.convert(document.body?.text ?? '');
+    return parsedString;
   }
 }

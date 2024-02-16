@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:video_player_app/src/features/trending_video/controllers/fetch_data_controller.dart';
@@ -17,7 +19,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: TextComponent(
+        title: const TextComponent(
           text: "Trending Videos",
           color: AppColors.appTitleColor,
           fontSize: 20.0,
@@ -81,6 +83,7 @@ class HomeScreen extends StatelessWidget {
       ),
     );
   }
+
 }
 
 

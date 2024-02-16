@@ -1,5 +1,9 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:html/parser.dart';
+import 'package:html_unescape/html_unescape.dart';
 import 'package:video_player_app/src/features/trending_video/controllers/fetch_data_controller.dart';
 import 'package:video_player_app/src/features/trending_video/models/video_player_model.dart';
 import 'package:video_player_app/src/features/trending_video/views/widgets/custom_card..dart';
@@ -26,7 +30,7 @@ class VideoPlayingPage extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.all(16.rSp),
                     child: TextComponent(
-                      text: _fetchDataController.videoPlayerModel.results?.first.title ?? '',
+                      text: convertText(data: _fetchDataController.videoPlayerModel.results?.first.title ?? ''),
                       color: AppColors.appTitleColor,
                       fontSize: 16.rSp,
                       fontFamily: 'Hind Siliguri',
@@ -244,6 +248,12 @@ class VideoPlayingPage extends StatelessWidget {
         ),
       ),
     );
+  }
+  dynamic convertText({required var data}){
+    var unescape = HtmlUnescape();
+    var document = parse(utf8.decode(data.codeUnits));
+    String parsedString = unescape.convert(document.body?.text ?? '');
+    return parsedString;
   }
 }
 
