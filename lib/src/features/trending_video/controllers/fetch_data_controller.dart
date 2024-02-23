@@ -1,9 +1,6 @@
-import 'dart:convert';
 import 'dart:developer';
 
 import 'package:get/get.dart';
-import 'package:html/parser.dart';
-import 'package:html_unescape/html_unescape.dart';
 import 'package:video_player_app/src/features/trending_video/models/video_player_model.dart';
 import 'package:video_player_app/src/services/network_caller.dart';
 import 'package:video_player_app/src/services/network_response.dart';
@@ -27,13 +24,13 @@ class FetchDataController extends GetxController {
   }
 
   Future<bool> getData() async {
-   // if (_isLoading) return false;
+    // if (_isLoading) return false;
 
     _isLoading = true;
     update();
 
-    NetworkResponse response = await NetworkCaller.getRequest(Urls.trendingVideo(pageNo: _currentPage));
-
+    NetworkResponse response = await NetworkCaller.getRequest(
+        Urls.trendingVideo(pageNo: _currentPage));
 
     _isLoading = false;
 
@@ -62,5 +59,4 @@ class FetchDataController extends GetxController {
       return false;
     }
   }
-
 }

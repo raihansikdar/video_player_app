@@ -1,8 +1,9 @@
-class NetworkResponse{
+class NetworkResponse {
   final bool isSuccess;
   final int statusCode;
-  final dynamic? body;
+  final dynamic body;
   //final Map<String,dynamic>? responseJsonBody;
 
-  NetworkResponse({required this.isSuccess, required this.statusCode,required this.body});
+  NetworkResponse(
+      {required this.isSuccess, required this.statusCode, required this.body});
 }
