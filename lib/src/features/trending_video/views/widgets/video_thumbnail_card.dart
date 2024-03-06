@@ -10,7 +10,6 @@ import 'package:video_player_app/src/utility/app_colors.dart';
 import 'package:video_player_app/src/utility/custom_size_extension.dart';
 import 'package:video_player_app/src/utility/text_component.dart';
 
-
 class VideoThumbnailCard extends StatelessWidget {
   const VideoThumbnailCard({
     super.key,
@@ -62,19 +61,19 @@ class VideoThumbnailCard extends StatelessWidget {
                           color: Colors.black,
                           borderRadius: BorderRadius.circular(5.rSp)),
                       child: Center(
-                        child: TextComponent(
-                            text: resultData.duration ?? '',
-                          color: AppColors.whiteColor,
-                          fontSize: 14.rSp,
-                          fontFamily: 'Hind Siliguri',
-                          fontWeight: FontWeight.w500,
-                        )
-                      ),
+                          child: TextComponent(
+                        text: resultData.duration ?? '',
+                        color: AppColors.whiteColor,
+                        fontSize: 14.rSp,
+                        fontFamily: 'Hind Siliguri',
+                        fontWeight: FontWeight.w500,
+                      )),
                     ))
               ],
             ),
             Padding(
-              padding: EdgeInsets.only(left: 16.rSp,right: 16.rSp,top: 16.rSp,bottom: 8.rSp),
+              padding: EdgeInsets.only(
+                  left: 16.rSp, right: 16.rSp, top: 16.rSp, bottom: 8.rSp),
               child: Row(
                 children: [
                   Container(
@@ -93,7 +92,7 @@ class VideoThumbnailCard extends StatelessWidget {
                   ),
                   Expanded(
                     child: TextComponent(
-                     text: convertText(data: resultData.title ?? ''),
+                      text: convertText(data: resultData.title ?? ''),
                       color: AppColors.appTitleColor,
                       fontSize: 16.rSp,
                       fontFamily: 'Hind Siliguri',
@@ -109,8 +108,8 @@ class VideoThumbnailCard extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(
-                  left: 60.0, bottom: 26.rSp, right: 16.rSp),
+              padding:
+                  EdgeInsets.only(left: 60.0, bottom: 26.rSp, right: 16.rSp),
               child: Row(
                 children: [
                   TextComponent(
@@ -135,10 +134,10 @@ class VideoThumbnailCard extends StatelessWidget {
       ),
     );
   }
-  dynamic convertText({required var data}){
-    var unescape = HtmlUnescape();
-    var document = parse(utf8.decode(data.codeUnits));
-    String parsedString = unescape.convert(document.body?.text ?? '');
-    return parsedString;
-  }
+  // dynamic convertText({required var data}){
+  //   var unescape = HtmlUnescape();
+  //   var document = parse(utf8.decode(data.codeUnits));
+  //   String parsedString = unescape.convert(document.body?.text ?? '');
+  //   return parsedString;
+  // }
 }
